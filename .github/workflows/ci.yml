@@ -1,8 +1,10 @@
+
 name: API Tests
 
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 jobs:
   test:
@@ -28,10 +30,13 @@ jobs:
           for i in {1..10}; do
             if curl -s "http://localhost:8080/payment/?CellNumber=09123456789" > /dev/null; then
               echo "Mock server is ready"
-              break
+              exit 0
             fi
             sleep 1
           done
+          echo "Mock server failed to start"
+          cat server.log
+          exit 1
 
       - name: Run API tests
         run: pytest
