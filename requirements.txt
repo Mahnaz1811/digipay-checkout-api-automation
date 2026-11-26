@@ -3,3 +3,4 @@ playwright
 pytest-bdd
 pytest-html
 python-dotenv
+pytest-playwright
