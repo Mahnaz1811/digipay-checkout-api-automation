@@ -65,7 +65,7 @@ The `CellNumber` parameter is sent as a query parameter in this implementation. 
 
 ## Setup
 
-Python 3.12 or later is required.
+Python 3.12 is recommended and was used for testing.
 
 Create and activate a virtual environment:
 
